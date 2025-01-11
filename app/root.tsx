@@ -5,6 +5,8 @@ import tailwindReset from '@unocss/reset/tailwind-compat.css?url';
 import { themeStore } from './lib/stores/theme';
 import { stripIndents } from './utils/stripIndent';
 import { createHead } from 'remix-island';
+import { stripIndents } from './utils/stripIndent';
+import { createHead } from 'remix-island';
 import { useEffect } from 'react';
 
 import reactToastifyStyles from 'react-toastify/dist/ReactToastify.css?url';
@@ -18,6 +20,10 @@ export const links: LinksFunction = () => [
     rel: 'icon',
     href: '/favicon.svg',
     type: 'image/svg+xml',
+  },
+  {
+    rel: 'canonical',
+    href: 'https://1wox.com',
   },
   { rel: 'stylesheet', href: reactToastifyStyles },
   { rel: 'stylesheet', href: tailwindReset },
@@ -55,6 +61,14 @@ const inlineThemeCode = stripIndents`
 export const Head = createHead(() => (
   <>
     <meta charSet="utf-8" />
+    <title>Create an AI Website | Build AI-Powered Websites with 1wox</title>
+    <meta name="description" content="Create an AI website easily with 1wox. Our AI-powered platform helps you build, customize and deploy websites in minutes. Start creating your AI website today!" />
+    <meta name="keywords" content="create AI website, AI website builder, AI web development, 1wox" />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="Create an AI Website | Build AI-Powered Websites with 1wox" />
+    <meta property="og:description" content="Create an AI website easily with 1wox. Our AI-powered platform helps you build, customize and deploy websites in minutes." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://1wox.com" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <Meta />
     <Links />
