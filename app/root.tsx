@@ -5,8 +5,6 @@ import tailwindReset from '@unocss/reset/tailwind-compat.css?url';
 import { themeStore } from './lib/stores/theme';
 import { stripIndents } from './utils/stripIndent';
 import { createHead } from 'remix-island';
-import { stripIndents } from './utils/stripIndent';
-import { createHead } from 'remix-island';
 import { useEffect } from 'react';
 
 import reactToastifyStyles from 'react-toastify/dist/ReactToastify.css?url';
@@ -20,10 +18,6 @@ export const links: LinksFunction = () => [
     rel: 'icon',
     href: '/favicon.svg',
     type: 'image/svg+xml',
-  },
-  {
-    rel: 'canonical',
-    href: 'https://1wox.com',
   },
   { rel: 'stylesheet', href: reactToastifyStyles },
   { rel: 'stylesheet', href: tailwindReset },
