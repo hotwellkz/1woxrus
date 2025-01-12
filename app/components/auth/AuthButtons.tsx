@@ -4,12 +4,14 @@ import { IconButton } from '../ui/IconButton';
 import { useState } from 'react';
 import { LoginModal } from './LoginModal';
 import WithTooltip from '../ui/Tooltip';
+import * as TooltipPrimitive from '@radix-ui/react-tooltip';
 
 export function AuthButtons() {
   const user = useStore(userStore);
   const [showLoginModal, setShowLoginModal] = useState(false);
 
   return (
+    <TooltipPrimitive.Provider>
     <div className="flex items-center gap-3">
       {user ? (
         <>
@@ -40,5 +42,6 @@ export function AuthButtons() {
         onClose={() => setShowLoginModal(false)}
       />
     </div>
+    </TooltipPrimitive.Provider>
   );
 }
