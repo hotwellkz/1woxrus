@@ -13,15 +13,15 @@ export function AuthButtons() {
     <div className="flex items-center gap-3">
       {user ? (
         <>
-          <div className="flex items-center gap-2">
-            <div className="i-ph:user-circle text-xl text-bolt-elements-textSecondary" />
+          <div className="flex items-center gap-2 text-bolt-elements-textSecondary">
+            <div className="i-ph-user-circle text-xl" />
             <span className="text-bolt-elements-textSecondary text-sm hidden md:block">
               {user.email}
             </span>
           </div>
           <WithTooltip tooltip="Выйти">
             <IconButton
-              icon="i-ph:sign-out-bold"
+              icon="i-ph:sign-out"
               onClick={() => logout()}
             />
           </WithTooltip>
@@ -29,7 +29,7 @@ export function AuthButtons() {
       ) : (
         <WithTooltip tooltip="Войти">
           <IconButton
-            icon="i-ph:sign-in-bold"
+            icon="i-ph:sign-in"
             onClick={() => setShowLoginModal(true)}
           />
         </WithTooltip>
