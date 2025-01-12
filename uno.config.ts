@@ -99,7 +99,7 @@ const COLOR_PRIMITIVES = {
 
 export default defineConfig({
   safelist: [
-    ...Object.keys(customIconCollection[collectionName]||{}).map(x=>`i-bolt:${x}`)    
+    ...Object.keys(customIconCollection[collectionName] || {}).map((x) => `i-bolt:${x}`),
   ],
   shortcuts: {
     'bolt-ease-cubic-bezier': 'ease-[cubic-bezier(0.4,0,0.2,1)]',
@@ -240,9 +240,14 @@ export default defineConfig({
       },
     }),
     presetIcons({
+      extraProperties: {
+        display: 'inline-block',
+        'vertical-align': 'middle',
+      },
       warn: true,
       collections: {
         ...customIconCollection,
+        ph: () => import('@iconify-json/ph/icons.json').then((i) => i.default),
       },
       unit: 'em',
     }),
